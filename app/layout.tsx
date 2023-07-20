@@ -27,13 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      {/* <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/> */}
+      <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/>
         <Navbar />
         {/* Padding for Navbar */}
         <AdsComponent />
 
         <div className="pb-20 mt-28">{children}</div>
-        {/* <CookieBanner /> */}
+        <CookieBanner />
         <AdsComponent />
 
         <Footer />

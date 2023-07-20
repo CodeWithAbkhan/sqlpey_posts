@@ -9,7 +9,6 @@ export async function GET(){
       const data = await prisma.posts.findMany({
         take: 10,
         where:{NOT:{FeaturedImage:null}},
-        orderBy:{post_date:"desc"}
       });
      
       const formatedPosts = data.map((post:any) => ({

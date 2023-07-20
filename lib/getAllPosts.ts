@@ -1,9 +1,9 @@
 import { cache } from "react";
 
 const siteUrl = process.env.NEXT_PUBLIC_DOMAIN_URL;
-export const getAllPosts = cache(async () => {
+export const getAllPosts = async () => {
    try{
-    const posts = await fetch(`${siteUrl}/api/posts`).then((res) => res.json());
+    const posts = await fetch(`${siteUrl}/api/posts`,{cache:"no-store"}).then((res) => res.json());
     if (!posts) {
         // console.log();
         return null;
@@ -14,5 +14,5 @@ export const getAllPosts = cache(async () => {
       return null;
     }
 }
-)
+
 export default getAllPosts

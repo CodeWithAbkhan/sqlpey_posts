@@ -65,18 +65,18 @@ const PostCard = ({
     >
       {/* Image */}
    
-     {post?.FeaturedImage? (
-         <Image
-         className={`rounded-md w-full object-cover object-center h-auto max-h-[300px] bg-neutral-100 ${
-           reverse ? " md:order-last " : ""
-         }}`}
-         width={600}
-         height={400}
-         alt={post?.post_title!!}
-         src={post?.FeaturedImage|| ""}
-       />
-         ) : (<div></div>)}
-   
+      {post?.FeaturedImage !== "" && (
+        <Image
+          className={`rounded-md w-full object-cover object-center h-auto max-h-[300px] bg-neutral-100 ${
+            reverse ? " md:order-last " : ""
+          }`}
+          width={600}
+          height={400}
+          alt={post?.post_title || ""}
+          src={post?.FeaturedImage || ""}
+        />
+      )}
+
       {/* Content */}
       <div>
         <PostCardContent post={post} />
