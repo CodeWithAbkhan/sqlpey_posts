@@ -22,7 +22,7 @@ class AdCodeWithoutRouter extends React.Component {
   render() {
     return (
       <div className="container mx-auto text-center" aria-hidden={true}>
-        {/* <ins
+        <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
           data-ad-client={caPub}
@@ -30,7 +30,7 @@ class AdCodeWithoutRouter extends React.Component {
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-        <script dangerouslySetInnerHTML={{ __html: '(window.adsbygoogle = window.adsbygoogle || []).push({});' }}></script> */}
+        <script dangerouslySetInnerHTML={{ __html: '(window.adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
       </div>
     );
   }

@@ -70,11 +70,8 @@ const PostCard = ({
           className={`rounded-md w-full object-cover object-center h-auto max-h-[300px] bg-neutral-100 ${
             reverse ? " md:order-last " : ""
           }`}
-          fill
-          sizes="(min-width: 808px) 50vw, 100vw"
-          style={{
-            objectFit: 'cover', // cover, contain, none
-          }}
+          width={600}
+          height={400}
           alt={post?.post_title || ""}
           src={post?.FeaturedImage || ""}
         />
