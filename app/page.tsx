@@ -5,7 +5,6 @@ import PostCardList from "@/components/post/postCardList";
 import getAllPosts from "@/lib/getAllPosts";
 import { notFound } from "next/navigation";
 type post= {
-  ID:BigInt;
   post_title: string;
   post_date: Date;
   post_name: string;
