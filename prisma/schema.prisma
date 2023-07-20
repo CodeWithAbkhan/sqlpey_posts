@@ -9,6 +9,7 @@ datasource db {
 
 model comments {
   comment_ID           BigInt   @id @default(0) @db.UnsignedBigInt
+  comment_post_ID      BigInt   @default(0) @db.UnsignedBigInt
   comment_author_email String   @default("") @db.VarChar(100)
   comment_date         DateTime @default(dbgenerated("('0000-00-00 00:00:00')")) @db.DateTime(0)
   comment_author       String   @db.TinyText
