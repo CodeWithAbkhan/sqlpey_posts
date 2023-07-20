@@ -47,8 +47,8 @@ export async function generateMetadata({
       };
 
     return {
-      title: post?.post_titl || "Not Found",
-      description: excerpt || "Not Found",
+      title: post?.post_title ,
+      description: excerpt,
       alternates: {
         canonical: `/question/${post.post_name}`,
       },
