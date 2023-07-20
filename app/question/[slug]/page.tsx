@@ -1,7 +1,6 @@
 import CtaCard from "@/components/elements/ctaCard";
 import PaddingContainer from "@/components/layouts/paddingContainer";
 import PostHero from "@/components/post/postHero";
-import getAllPosts from "@/lib/getAllPosts";
 import getPostData from "@/lib/getPostData";
 import { notFound } from "next/navigation";
 import PostBody from "./postBody";
@@ -31,8 +30,12 @@ export async function generateMetadata({
   try {
 
     const post = await getPostData(params.slug);
-   
-        const plainText = post.post_content.replace(/<[^>]*>/g, '');
+    const catList = post?.categories.split(', ') || [""];
+      let postType :string;
+     
+        postType = catList[0];
+    
+        const plainText = post?.post_content.replace(/<[^>]*>/g, '') || "";
     const regex = /^([\s\S]{0,159}\s)/;
      const matchText = plainText.match(regex);
 
@@ -44,8 +47,8 @@ export async function generateMetadata({
       };
 
     return {
-      title: post.post_title,
-      description: excerpt,
+      title: post?.post_titl || "Not Found",
+      description: excerpt || "Not Found",
       alternates: {
         canonical: `/question/${post.post_name}`,
       },
@@ -59,15 +62,15 @@ export async function generateMetadata({
   }
 }
 
-export async function generateStaticParams() {
-  const posts: post[] = await getAllPosts();
+// export async function generateStaticParams() {
+//   const posts: post[] = await getAllPosts();
 
-  if (!posts) return [];
+//   if (!posts) return [];
 
-  return posts.map((post:post) => ({
-    slug: post.post_name,
-  }));
-}
+//   return posts?.map((post:post) => ({
+//     slug: post?.post_name,
+//   }));
+// }
 
 const BlogPage = async ({
   params: { slug },
@@ -84,7 +87,6 @@ const BlogPage = async ({
       <div className="space-y-10">
         <PostHero post={post} />
         <AdsComponent />
-
         <PostBody post={post} />
         <CtaCard />
       </div>

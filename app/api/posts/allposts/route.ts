@@ -6,21 +6,25 @@ export async function GET(){
     
     try{
       const data = await prisma.posts.findMany({
-        take:10,
-       select:{
-        ID:true,
-        categories:true,
-        post_type:true,
-        post_name:true,
-       
-
-       }
+        select: {
+          ID: true,
+          post_type: true,
+          post_name: true,
+          post_date: true,
+          categories: true,
+        },
+        where: {
+          NOT: {
+            post_name: {
+              contains: "trashed", // Use the correct syntax for the 'contains' operator
+            },
+          },
+        },
       });
-     
+      
       const formatedPosts = data.map((post:any) => ({
         ...post,
-        ID: Number(post.ID),
-        comment_count: Number(post.comment_count),
+        ID: Number(post.ID)
       }));
       return NextResponse.json(formatedPosts);
   } catch (error) {

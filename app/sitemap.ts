@@ -6,6 +6,7 @@ type post= {
   categories:string;
   post_type:string;
   post_name:string;
+  post_date:Date;
  
 }
 
@@ -17,17 +18,18 @@ export default async function sitemap() {
   const posts:post[] = await getPostSitemap();
   const postsUrls =
     posts?.map((post:post) => {
-      const catList = post?.categories.split(', ') || "sql";
+      const catList = post?.categories?.split(', ') || "sql";
       let postType :string;
-      if (post.post_type='post') {
-        postType = catList[0];
+      if (post.post_type==="question") {
+       
+        postType = 'question';
       }
       else{
-        postType = 'question';
+        postType = catList[0];
       }
       return {
         url: `${siteUrl}/${postType}/${post.post_name}`,
-        lastModified: new Date(),
+        lastModified: post.post_date,
       };
     }) ?? [];
 
