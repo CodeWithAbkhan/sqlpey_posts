@@ -27,17 +27,17 @@ const PostCardContent = ({ post, isPostHero }: PostCardContentProps) => {
       <div className="flex flex-wrap @md:flex-nowrap items-center gap-1 @md:gap-2  text-xs @md:text-sm text-neutral-500">
         <div
           className={`font-medium ${
-            post.categories?.split(', ')[0] === "sql" 
+            post?.categories?.split(', ')[0] === "sql" 
               ? "text-emerald-600"
               : "text-indigo-600"
           }`}
         >
-          { post.categories?.split(', ')[0] }
+          {/* { post.categories?.split(', ')[0] } */}
         </div>
         <div className="w-1 h-1 rounded-full bg-neutral-300 " />
         <div>{post.author}</div>
         <div className="w-1 h-1 rounded-full bg-neutral-300" />
-        <div>{getReadingTime(post.post_content!!)}</div>
+        <div>{getReadingTime(post?.post_content!!)}</div>
         <div className="w-1 h-1 rounded-full bg-neutral-300" />
         {/* <div>{getRelativeDate(post.post_date!!)}</div> */}
       </div>
@@ -47,7 +47,7 @@ const PostCardContent = ({ post, isPostHero }: PostCardContentProps) => {
           isPostHero ? "text-4xl" : "text-xl @md:text-2xl @lg:text-3xl"
         }`}
       >
-        {post.post_title}
+        {post?.post_title}
       </h1>
      
     </div>
