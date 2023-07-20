@@ -10,7 +10,7 @@ type post= {
   post_name: string;
   post_content: string;
   post_status: string;
-  FeaturedImage: string | null;
+  FeaturedImage: string | "";
   views: string | null;
   author: string | null;
   avatar: string | null;

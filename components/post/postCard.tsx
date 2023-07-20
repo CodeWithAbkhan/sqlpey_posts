@@ -65,7 +65,7 @@ const PostCard = ({
     >
       {/* Image */}
    
-     {post.FeaturedImage? (
+     {post?.FeaturedImage? (
          <Image
          className={`rounded-md w-full object-cover object-center h-auto max-h-[300px] bg-neutral-100 ${
            reverse ? " md:order-last " : ""

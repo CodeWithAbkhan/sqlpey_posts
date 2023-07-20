@@ -21,7 +21,7 @@ export default async function og({ params }: { params: { slug: string } }) {
         <div tw="absolute flex inset-0">
           <img
             tw="flex flex-1"
-            src={post?.FeaturedImage + "&w=1200&h=630&auto=format&q=75"}
+            src={post?.FeaturedImage|| ""}
             alt={post?.post_title!!}
           />
           {/* Overlay */}
