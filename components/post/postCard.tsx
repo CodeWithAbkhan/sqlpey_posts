@@ -74,6 +74,7 @@ const PostCard = ({
           height={400}
           alt={post?.post_title || ""}
           src={post?.FeaturedImage || ""}
+          rel="preload" // Preload the image
         />
       )}
 

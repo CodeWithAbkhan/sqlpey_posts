@@ -36,11 +36,15 @@ export default function RootLayout({
       <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/>
         <Navbar />
         {/* Padding for Navbar */}
-        <AdsComponent />
+        <div className=" max-h-60 ">
+          <AdsComponent />
+        </div>
 
         <div className="pb-20 mt-28">{children}</div>
         <CookieBanner />
-        <AdsComponent />
+        <div className=" max-h-60 ">
+          <AdsComponent />
+        </div>
 
         <Footer />
       </body>

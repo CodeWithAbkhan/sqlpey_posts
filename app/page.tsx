@@ -41,6 +41,7 @@ export default async function Home() {
             </div>
             <div className="hidden md:flex flex-col w-1/4">
               <AdsComponent />
+              <AdsComponent />
             </div>
           </div>
         </main>
