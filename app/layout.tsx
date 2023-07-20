@@ -4,6 +4,7 @@ import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieBanner from "@/components/Cookie/CookieBanner";
 import AdsComponent from "@/components/AdsComponent";
+import Script from "next/script";
 
 const siteUrl:any = process.env.NEXT_PUBLIC_DOMAIN_URL;
 const ga_id:any= process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -26,6 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9018422630165731"
+     crossOrigin="anonymous"
+     strategy="lazyOnload" />
+      </head>
       <body>
       <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/>
         <Navbar />

@@ -1,3 +1,4 @@
+import AdsComponent from "@/components/AdsComponent";
 import CtaCard from "@/components/elements/ctaCard";
 import PaddingContainer from "@/components/layouts/paddingContainer";
 import PostCard from "@/components/post/postCard";
@@ -29,12 +30,19 @@ export default async function Home() {
     <div className="">
       <PaddingContainer>
         <main className="space-y-10">
-          <PostCard direction="horizontal" post={posts[0]} />
-          <PostCardList posts={[posts[1], posts[2]]} />
-          {/* CTA */}
-          <CtaCard />
-          <PostCard reverse direction="horizontal" post={posts[3]} />
-          <PostCardList posts={[posts[4], posts[5]]} />
+          <div className="flex flex-row">
+            <div className="flex flex-col w-3/4">
+              <PostCard direction="horizontal" post={posts[0]} />
+              <PostCardList posts={[posts[1], posts[2]]} />
+              {/* CTA */}
+              <CtaCard />
+              <PostCard reverse direction="horizontal" post={posts[3]} />
+              <PostCardList posts={[posts[4], posts[5]]} />
+            </div>
+            <div className="hidden md:flex flex-col w-1/4">
+              <AdsComponent />
+            </div>
+          </div>
         </main>
       </PaddingContainer>
     </div>
