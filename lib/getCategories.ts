@@ -12,9 +12,7 @@ try{
           categories: true,
         },
         where: {
-          categories: {
-            NOT: null,
-          },
+          NOT:{categories: null},
         },
         distinct: ['categories'], // Use this line if you want to retrieve distinct categories
       });
