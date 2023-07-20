@@ -35,7 +35,7 @@ const PostCardContent = ({ post, isPostHero }: PostCardContentProps) => {
           {/* { post.categories?.split(', ')[0] } */}
         </div>
         <div className="w-1 h-1 rounded-full bg-neutral-300 " />
-        <div>{post.author}</div>
+        <div>{post?.author}</div>
         <div className="w-1 h-1 rounded-full bg-neutral-300" />
         <div>{getReadingTime(post?.post_content!!)}</div>
         <div className="w-1 h-1 rounded-full bg-neutral-300" />
