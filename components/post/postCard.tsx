@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 import PostCardContent from "./postCardContent";
+import DOMPurify from "dompurify";
 type post= {
   ID:BigInt;
   post_title: string;
@@ -74,14 +75,17 @@ const PostCard = ({
           height={400}
           alt={post?.post_title || ""}
           src={post?.FeaturedImage || ""}
-          rel="preload" // Preload the image
+          
         />
       )}
 
       {/* Content */}
       <div>
         <PostCardContent post={post} />
-      <div className="prose prose-gray items-center">{post_excerpt}</div>
+      <div className="prose prose-gray items-center">
+      {<div dangerouslySetInnerHTML={{
+          __html:DOMPurify.sanitize(post_excerpt) + "...",
+        }}/>}</div>
 
         <div className="flex items-center gap-2 mt-4">
           Read More <HiOutlineArrowUpRight />{" "}

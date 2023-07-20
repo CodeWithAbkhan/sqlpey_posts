@@ -1,5 +1,6 @@
 import AdsComponent from "@/components/AdsComponent";
 import ShareLinks from "@/components/elements/shareLinks";
+import DOMPurify from "dompurify";
 
 type post= {
   ID:BigInt,
@@ -42,8 +43,9 @@ const PostBody = ({ post }: PostBodyProps) => {
             
             overflow-hidden
             '>
-          <div dangerouslySetInnerHTML={
-            {__html:post.post_content}}/>
+       {<div dangerouslySetInnerHTML={{
+          __html:DOMPurify.sanitize(post.post_content) + "...",
+        }}/>}
       
           </article >
       </div>
