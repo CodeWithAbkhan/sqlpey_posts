@@ -44,7 +44,7 @@ const PostBody = ({ post }: PostBodyProps) => {
             overflow-hidden
             '>
        {<div dangerouslySetInnerHTML={{
-          __html:DOMPurify.sanitize(post.post_content) + "...",
+          __html:post.post_content+ "...",
         }}/>}
       
           </article >

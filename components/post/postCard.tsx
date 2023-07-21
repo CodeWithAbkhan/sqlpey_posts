@@ -84,7 +84,7 @@ const PostCard = ({
         <PostCardContent post={post} />
       <div className="prose prose-gray items-center">
       {<div dangerouslySetInnerHTML={{
-          __html:DOMPurify.sanitize(post_excerpt) + "...",
+          __html:post_excerpt + "...",
         }}/>}</div>
 
         <div className="flex items-center gap-2 mt-4">
