@@ -37,11 +37,11 @@ const AdsComponent = () => {
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
-      <script
+      {/* <script
         dangerouslySetInnerHTML={{
           __html: '(window.adsbygoogle = window.adsbygoogle || []).push({});',
         }}
-      ></script>
+      ></script> */}
     </div>
   );
 };
