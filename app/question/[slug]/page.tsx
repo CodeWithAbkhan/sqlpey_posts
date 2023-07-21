@@ -86,7 +86,7 @@ const BlogPage = async ({
     <PaddingContainer>
       <div className="space-y-10">
         <PostHero post={post} />
-        <AdsComponent />
+        {/* <AdsComponent /> */}
         <PostBody post={post} />
         <CtaCard />
       </div>

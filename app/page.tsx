@@ -40,8 +40,8 @@ export default async function Home() {
               <PostCardList posts={[posts[4], posts[5]]} />
             </div>
             <div className="hidden md:flex flex-col w-1/4">
-              <AdsComponent />
-              <AdsComponent />
+              {/* <AdsComponent />
+              <AdsComponent /> */}
             </div>
           </div>
         </main>

@@ -33,7 +33,7 @@ export default function RootLayout({
      strategy="lazyOnload" />
       </head>
       <body>
-      <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/>
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID={ga_id}/> */}
         <Navbar />
         {/* Padding for Navbar */}
         <div className=" max-h-60 ">
@@ -41,10 +41,10 @@ export default function RootLayout({
         </div>
 
         <div className="pb-20 mt-28">{children}</div>
-        <CookieBanner />
-        <div className=" max-h-60 ">
+        {/* <CookieBanner /> */}
+        {/* <div className=" max-h-60 ">
           <AdsComponent />
-        </div>
+        </div> */}
 
         <Footer />
       </body>

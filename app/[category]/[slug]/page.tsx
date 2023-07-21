@@ -92,7 +92,7 @@ const BlogPage = async ({
         <PostBody post={post} />
         <CtaCard />
       </div>
-      <div className="flex flex-col w-3/4">
+      <div className="flex flex-col w-1/4">
         <div></div>
         <AdsComponent />
       </div>
