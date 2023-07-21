@@ -7,25 +7,14 @@ const AdsComponent = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const renderAds = () => {
+    try{
+      
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-    };
-
-    // Render the ads on initial mount
-    renderAds();
-
-    // Re-render the ads whenever the router's asPath changes
-    const handleRouteChange = () => {
-      renderAds();
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      // Clean up the event listener when the component is unmounted
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router]);
+    }catch(error){
+        console.log(error);
+    }
+   
+  },[]);
 
   return (
     <div className="container mx-auto text-center" aria-hidden={true}>

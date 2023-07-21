@@ -1,6 +1,7 @@
 import CtaCard from "@/components/elements/ctaCard";
 import PaddingContainer from "@/components/layouts/paddingContainer";
 import PostHero from "@/components/post/postHero";
+import getAllPosts from "@/lib/getAllPosts";
 import getPostData from "@/lib/getPostData";
 import { notFound } from "next/navigation";
 import PostBody from "./postBody";
@@ -84,11 +85,17 @@ const BlogPage = async ({
 
   return (
     <PaddingContainer>
-      <div className="space-y-10">
+       <div className="flex flex-row space-y-10">
+            <div className="flex flex-col w-3/4">
         <PostHero post={post} />
         {/* <AdsComponent /> */}
         <PostBody post={post} />
         <CtaCard />
+      </div>
+      <div className="flex flex-col w-1/4">
+        <div></div>
+        <AdsComponent />
+      </div>
       </div>
     </PaddingContainer>
   );
